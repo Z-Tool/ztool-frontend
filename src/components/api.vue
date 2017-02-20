@@ -26,7 +26,8 @@
       </el-col>
     </el-row>
     <div class="foot">
-      <el-button @click="sayhello">Let's do it</el-button>
+      <el-button @click="increaseCount">Increase count!</el-button>
+      <p>You have viewed this page {{count}} times.</p>
     </div>
   </div>
 </template>
@@ -61,10 +62,9 @@ export default {
     }
   },
   methods: {
-    sayhello () {
+    increaseCount () {
       // vuex test code
       store.commit('increment')
-      console.log(store.state.count)
       http.get(this, '/api/v1.0/test').then(resp => {
         if (resp.status == 200) {
           this.$notify({
@@ -80,6 +80,11 @@ export default {
       router.push({name: 'index'})
     }
   },
+  computed: {
+    count () {
+      return store.state.count
+    }
+  },
   created: function () {
     Auth.checkAuth()
     this.user = Auth.user.authenticated
@@ -88,7 +93,6 @@ export default {
     })
     // vuex test code
     store.commit('increment')
-    console.log(store.state.count)
   }
 }
 </script>
