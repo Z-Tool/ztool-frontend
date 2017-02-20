@@ -1,3 +1,3 @@
 module.exports = {
-	APIServer: 'https://vps.jack003.com:8443'
+	APIServer: 'http://127.0.0.1:5000'
 }
