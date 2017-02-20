@@ -22,6 +22,7 @@
 <script>
 import Vue from 'vue'
 import { Button, Carousel, CarouselItem } from 'element-ui'
+import store from '../store'
 
 Vue.component(Button.name, Button)
 Vue.component(Carousel.name, Carousel)
@@ -43,6 +44,8 @@ export default {
   methods: {
   },
   mounted: function () {
+    // vuex test code
+    console.log(store.state.count)
     this.$nextTick(function () {
       this.height = document.documentElement.clientHeight + 'px'
     })

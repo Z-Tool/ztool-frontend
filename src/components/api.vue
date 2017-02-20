@@ -39,6 +39,7 @@ import constant from '../constant.js'
 import http from '../directive/http'
 import Auth from '../directive/auth'
 import router from '../router'
+import store from '../store'
 
 Vue.use(VueResource);
 Vue.component(Button.name, Button)
@@ -61,6 +62,9 @@ export default {
   },
   methods: {
     sayhello () {
+      // vuex test code
+      store.commit('increment')
+      console.log(store.state.count)
       http.get(this, '/api/v1.0/test').then(resp => {
         if (resp.status == 200) {
           this.$notify({
@@ -82,6 +86,9 @@ export default {
     http.get(this, '/api/v1.0/').then(resp => {
       this.api_list = resp.body.data
     })
+    // vuex test code
+    store.commit('increment')
+    console.log(store.state.count)
   }
 }
 </script>
