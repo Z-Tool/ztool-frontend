@@ -28,6 +28,7 @@
     <div class="foot">
       <el-button @click="increaseCount">Increase count!</el-button>
       <p>You have viewed this page {{count}} times.</p>
+      <p>{{ workApis }}</p>
     </div>
   </div>
 </template>
@@ -83,6 +84,9 @@ export default {
   computed: {
     count () {
       return store.state.count
+    },
+    workApis () {
+      return store.getters.workApis
     }
   },
   created: function () {
