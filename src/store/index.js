@@ -20,6 +20,14 @@ const store = new Vuex.Store({
     increment (state) {
     	// test code at page '/' & '/api'
       state.count++
+    },
+    addtrueApis (state) {
+      var l = state.api_list.length
+      state.api_list.push({id: l + 1, work: true})
+    },
+    addfalseApis (state) {
+      var l = state.api_list.length
+      state.api_list.push({id: l + 1, work: false})
     }
   }
 })

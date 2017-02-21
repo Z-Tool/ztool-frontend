@@ -30,7 +30,11 @@
         <el-button @click="increaseCount">Increase count!</el-button>
       </el-tooltip>
       <p>You have viewed this page {{count}} times.</p>
-      <p>{{ workApis }}</p>
+      <el-tooltip effect="dark" content="Magic2!" placement="right" style="display: block;margin-bottom: 5px;">
+        <el-button @click="addtrueApis">Add true!</el-button>
+        <el-button @click="addfalseApis">Add false!</el-button>
+      </el-tooltip>
+      <span v-for="i in workApis" style="display: inline;">{{ i.id }},</span>
     </div>
   </div>
 </template>
@@ -78,6 +82,12 @@ export default {
           })
         }
       })
+    },
+    addtrueApis () {
+      store.commit('addtrueApis')
+    },
+    addfalseApis () {
+      store.commit('addfalseApis')
     },
     logout () {
       Auth.logout()
