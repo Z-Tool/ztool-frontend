@@ -26,7 +26,9 @@
       </el-col>
     </el-row>
     <div class="foot">
-      <el-button @click="increaseCount">Increase count!</el-button>
+      <el-tooltip effect="dark" content="Magic!" placement="right">
+        <el-button @click="increaseCount">Increase count!</el-button>
+      </el-tooltip>
       <p>You have viewed this page {{count}} times.</p>
       <p>{{ workApis }}</p>
     </div>
@@ -36,7 +38,7 @@
 <script>
 import Vue from 'vue'
 import VueResource from 'vue-resource'
-import { Button, Notification, Row, Col, Collapse, CollapseItem } from 'element-ui'
+import { Button, Notification, Row, Col, Collapse, CollapseItem, Tooltip } from 'element-ui'
 import constant from '../constant.js'
 import http from '../directive/http'
 import Auth from '../directive/auth'
@@ -50,6 +52,7 @@ Vue.component(Row.name, Row)
 Vue.component(Col.name, Col)
 Vue.component(CollapseItem.name, CollapseItem)
 Vue.component(Collapse.name, Collapse)
+Vue.component(Tooltip.name, Tooltip)
 Vue.prototype.$notify = Notification
 
 export default {
