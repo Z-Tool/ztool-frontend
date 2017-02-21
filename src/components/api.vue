@@ -30,10 +30,13 @@
         <el-button @click="increaseCount">Increase count!</el-button>
       </el-tooltip>
       <p>You have viewed this page {{count}} times.</p>
-      <el-tooltip effect="dark" content="Magic2!" placement="right" style="display: block;margin-bottom: 5px;">
+      <el-tooltip effect="dark" content="Magic True!" placement="left" class="tool">
         <el-button @click="addtrueApis">Add true!</el-button>
+      </el-tooltip>
+      <el-tooltip effect="dark" content="Magic False!" placement="right" class="tool">
         <el-button @click="addfalseApis">Add false!</el-button>
       </el-tooltip>
+      <br>
       <span v-for="i in workApis" style="display: inline;">{{ i.id }},</span>
     </div>
   </div>
@@ -119,5 +122,9 @@ export default {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.tool {
+  display: inline-block;
+  margin-bottom: 5px;
 }
 </style>
