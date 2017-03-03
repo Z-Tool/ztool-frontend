@@ -11,7 +11,7 @@
 
 <script>
 import Vue from 'vue'
-import { Button, Notification, Row, Col, Collapse, CollapseItem, Tooltip } from 'element-ui'
+import { Button, Notification, Row, Col } from 'element-ui'
 import http from '../../../directive/http'
 import Auth from '../../../directive/auth'
 
