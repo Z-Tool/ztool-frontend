@@ -10,8 +10,7 @@
     "upload": "node build/upload.js"
   },
   "dependencies": {
-    "axios": "^0.15.3",
-    "element-ui": "^1.1.6",
+    "element-ui": "^1.2.3",
     "font-awesome": "^4.7.0",
     "normalize-css": "^2.3.1",
     "vue": "^2.1.10",

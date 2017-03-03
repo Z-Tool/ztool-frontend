@@ -9,6 +9,7 @@ const api1 = resolve => require(['components/api1'], resolve)
 const api = resolve => require(['components/api'], resolve)
 // const api_time = resolve => require(['components/layout/api/time'], resolve)
 const api_time = r => require.ensure([], () => r(require('components/layout/api/time')), 'api')
+const api_jalpc_count = r => require.ensure([], () => r(require('components/layout/api/jalpc_count')), 'api')
 const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user')
 const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user')
 const notfound = resolve => require(['components/404'], resolve)
@@ -41,6 +42,13 @@ const routes = [{
     component: api_time,
     meta: {
       title: 'API List | Time',
+      auth: true
+    }
+  }, {
+    path: 'jalpc_count',
+    component: api_jalpc_count,
+    meta: {
+      title: 'API List | Jalpc Count',
       auth: true
     }
   }]

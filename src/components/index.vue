@@ -99,6 +99,7 @@ export default {
   height: 240px;
   width: 70%;
   text-align: center;
+  z-index: 9999;
 }
 
 #avatar {

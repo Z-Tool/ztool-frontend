@@ -27,7 +27,6 @@
 <script>
 import Vue from 'vue'
 import VueResource from 'vue-resource'
-import axios from 'axios'
 import VueCookie from 'vue-cookie'
 import { Row, Col, Input, Button, Form, FormItem, Notification } from 'element-ui'
 import constant from '../../constant.js'
@@ -44,47 +43,47 @@ Vue.component(FormItem.name, FormItem)
 Vue.component(Notification.name, Notification)
 Vue.prototype.$notify = Notification
 
-  export default {
-    data() {
-      return {
-        loginForm: {
-          username: '',
-          password: ''
-        },
-        rules: {
-          username: [
-            { required: true, message: 'Please input your username!', trigger: 'blur' },
-            { min: 4, max: 20, message: 'Length of username should be from 4 to 20', trigger: 'blur' }
-          ],
-          password: [
-            { required: true, message: 'Please input your password!', trigger: 'blur' },
-            { min: 6, max: 20, message: 'Length of password should be from 6 to 20', trigger: 'blur' }
-          ]
-        }
-      };
-    },
-    methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            var authStr = window.btoa(this.loginForm.username + ':' + this.loginForm.password)
-            var headers = {
-               headers: {Authorization: 'Basic ' + authStr}
-            }
-            auth.login(this, headers, 'api')
-          } else {
-            // console.log('error submit!!');
-            this.$notify.error({
-              title: 'Jack003',
-              message: 'Please check your input!',
-              duration: 3000
-            })
-            return false;
-          }
-        });
+export default {
+  data() {
+    return {
+      loginForm: {
+        username: '',
+        password: ''
+      },
+      rules: {
+        username: [
+          { required: true, message: 'Please input your username!', trigger: 'blur' },
+          { min: 4, max: 20, message: 'Length of username should be from 4 to 20', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: 'Please input your password!', trigger: 'blur' },
+          { min: 6, max: 20, message: 'Length of password should be from 6 to 20', trigger: 'blur' }
+        ]
       }
+    };
+  },
+  methods: {
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          var authStr = window.btoa(this.loginForm.username + ':' + this.loginForm.password)
+          var headers = {
+             headers: {Authorization: 'Basic ' + authStr}
+          }
+          auth.login(this, headers, 'api')
+        } else {
+          // console.log('error submit!!');
+          this.$notify.error({
+            title: 'Jack003',
+            message: 'Please check your input!',
+            duration: 3000
+          })
+          return false;
+        }
+      });
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
