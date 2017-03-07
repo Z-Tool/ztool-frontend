@@ -79,7 +79,7 @@ export default {
       http.get(this, '/api/v1.0/test').then(resp => {
         if (resp.status == 200) {
           this.$notify({
-            title: 'Welcome to Jack003 VPS',
+            title: 'Welcome to Jarrekk VPS',
             message: 'Hope you enjoy API time!',
             duration: 3000
           })

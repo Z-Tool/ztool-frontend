@@ -1,6 +1,6 @@
 require('shelljs/global');
 
-var host = 'root@vps.jack003.com'
+var host = 'root@vps.jarrekk.com'
 var dir = '/usr/share/nginx/html'
 
 exec('ssh ' + host + ' "rm -rf ' + dir + '/*"', function(code, stdout, stderr) {

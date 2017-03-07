@@ -1,6 +1,6 @@
 <template>
 <div>
-	<h1>Login to Jack003</h1>
+	<h1>Login to Jarrekk</h1>
   <el-row :gutter="20">
   	<el-col :span="6" :offset="9">
 			<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
@@ -74,7 +74,7 @@ export default {
         } else {
           // console.log('error submit!!');
           this.$notify.error({
-            title: 'Jack003',
+            title: 'Jarrekk',
             message: 'Please check your input!',
             duration: 3000
           })

@@ -12,7 +12,7 @@ export default {
       localStorage.setItem('id_token', response.body.token, '3600s');
       this.user.authenticated = true
       context.$notify({
-        title: 'Jack003',
+        title: 'Jarrekk',
         message: 'Welcome back ' + response.body.email + '!',
         duration: 3000,
         type: 'success'
@@ -25,13 +25,13 @@ export default {
       console.log(0, response)
       if (response.status == 0) {
         context.$notify.error({
-          title: 'Jack003',
+          title: 'Jarrekk',
           message: 'Login error! Please check your network.',
           duration: 3000
         })
       } else {
         context.$notify.error({
-          title: 'Jack003',
+          title: 'Jarrekk',
           message: 'Username or password is wrong!',
           duration: 3000
         })

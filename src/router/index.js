@@ -23,7 +23,7 @@ const routes = [{
   path: '/',
   name: 'index',
   meta: {
-    title: 'Jack003',
+    title: 'Jarrekk',
   },
   component: index
 }, {

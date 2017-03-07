@@ -33,11 +33,11 @@ export default {
   data () {
     return {
       name: 'Kun Jia',
-      website: 'http://www.jack003.com',
+      website: 'http://www.jarrekk.com',
       facebook: 'https://www.facebook.com/jiakunnj',
       github: 'https://github.com/jarrekk',
       linkedin: 'https://www.linkedin.com/in/kun-jia-991264a2/',
-      email: 'mailto:me@jack003.com',
+      email: 'mailto:me@jarrekk.com',
       height: ''
     }
   },

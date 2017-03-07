@@ -33,7 +33,7 @@ export default {
 	name: 'api',
 	data () {
 		return {
-			title: 'Jack003'
+			title: 'Jarrekk'
 		}
 	},
 	methods: {
