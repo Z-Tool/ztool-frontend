@@ -5,17 +5,18 @@ import VueCookie from 'vue-cookie'
 import Auth from '../directive/auth'
 
 const index = resolve => require(['components/index'], resolve)
-const api1 = resolve => require(['components/api1'], resolve)
 const api = resolve => require(['components/api'], resolve)
-// const api_time = resolve => require(['components/layout/api/time'], resolve)
-const api_time = r => require.ensure([], () => r(require('components/layout/api/time')), 'api')
-const api_jalpc_count = r => require.ensure([], () => r(require('components/layout/api/jalpc_count')), 'api')
-const rss = r => require.ensure([], () => r(require('components/layout/api/rss')), 'api')
-const ip_information = r => require.ensure([], () => r(require('components/layout/api/ip_information')), 'api')
-const domain_name = r => require.ensure([], () => r(require('components/layout/api/domain_name')), 'api')
-const dns = r => require.ensure([], () => r(require('components/layout/api/dns')), 'api')
+
+const api_time = resolve => require(['components/layout/api/time'], resolve)
+const api_jalpc_count = resolve => require(['components/layout/api/jalpc_count'], resolve)
+const rss = resolve => require(['components/layout/api/rss'], resolve)
+const ip_information = resolve => require(['components/layout/api/ip_information'], resolve)
+const domain_name = resolve => require(['components/layout/api/domain_name'], resolve)
+const dns = resolve => require(['components/layout/api/dns'], resolve)
+
 const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user')
 const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user')
+
 const notfound = resolve => require(['components/404'], resolve)
 
 Vue.use(Router)
@@ -31,7 +32,7 @@ const routes = [{
   },
   component: index
 }, {
-  path: '/api1',
+  path: '/api',
   name: 'api',
   component: api,
   children: [{
@@ -84,14 +85,6 @@ const routes = [{
       auth: true
     }
   }]
-}, {
-  path: '/api',
-  name: 'api1',
-  meta: {
-    title: 'API List',
-    auth: true
-  },
-  component: api1
 }, {
   path: '/user/login',
   name: 'login',
