@@ -44,7 +44,7 @@ methods: {
 	      	const formatter = new JSONFormatter(resp.data)
 	      	document.getElementById('result').innerHTML = ""
 	      	document.getElementById('result').appendChild(formatter.render())
-	      	formatter.openAtDepth(5)
+	      	formatter.openAtDepth(2)
 	    })
 	},
 	copy_result () {
