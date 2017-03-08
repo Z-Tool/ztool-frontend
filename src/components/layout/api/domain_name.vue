@@ -3,7 +3,6 @@
 		<el-row :gutter="20" style="margin-top: 20px;">
 		  	<el-col :span="10" :offset="7">
 				<el-input placeholder="Domain Name" v-model="domain_name">
-				    <!-- <template slot="prepend">Http(s)://</template> -->
 				    <el-button slot="append" icon="search" @click="get_info"></el-button>
 				</el-input>
 				<div v-show="result" id="result" style="text-align: left;margin-top: 20px;"></div>
