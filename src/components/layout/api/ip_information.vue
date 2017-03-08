@@ -39,7 +39,7 @@ data() {
 },
 methods: {
 	get_info () {
-		http.get(this, '/api/v1.0/info?ip=' + this.domain_name).then(resp => {
+		http.get(this, '/api/v1.0/info?ip=' + this.ip_address).then(resp => {
 			this.result = JSON.stringify(resp.data)
 	      	const formatter = new JSONFormatter(resp.data)
 	      	document.getElementById('result').innerHTML = ""
@@ -53,9 +53,6 @@ methods: {
 	}
 },
 created: function () {
-    http.get(this, '/api/v1.0/time').then(resp => {
-      this.time = resp.body.data
-    })
 	  store.commit('changeMenu', "5")
   }
 }
