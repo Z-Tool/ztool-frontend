@@ -1,13 +1,13 @@
 <template>
 <div>
-	<el-menu default-active="1" mode="horizontal" @select="handleSelect">
-	  <router-link to="/api1/time"><el-menu-item index="0"><span>{{ title }}</span></el-menu-item></router-link>
-	  <router-link to="/api1/time"><el-menu-item index="1">Time</el-menu-item></router-link>
-	  <router-link to="/api1/jalpc_count"><el-menu-item index="2">Jalpc Count</el-menu-item></router-link>
-	  <router-link to="/api"><el-menu-item index="3">RSS</el-menu-item></router-link>
-	  <router-link to="/api1"><el-menu-item index="4">IP Information</el-menu-item></router-link>
-	  <router-link to="/api1"><el-menu-item index="5">Domain Name Information</el-menu-item></router-link>
-	  <router-link to="/api1/time"><el-menu-item index="6">DNS Record</el-menu-item></router-link>
+	<el-menu v-bind:default-active="menu_active" mode="horizontal" @select="handleSelect">
+	  <router-link to="/api1/time"><el-menu-item index="1"><span>{{ title }}</span></el-menu-item></router-link>
+	  <router-link to="/api1/time"><el-menu-item index="2">Time</el-menu-item></router-link>
+	  <router-link to="/api1/jalpc_count"><el-menu-item index="3">Jalpc Count</el-menu-item></router-link>
+	  <router-link to="/api"><el-menu-item index="4">RSS</el-menu-item></router-link>
+	  <router-link to="/api1"><el-menu-item index="5">IP Information</el-menu-item></router-link>
+	  <router-link to="/api1"><el-menu-item index="6">Domain Name Information</el-menu-item></router-link>
+	  <router-link to="/api1/time"><el-menu-item index="7">DNS Record</el-menu-item></router-link>
 	</el-menu>
  	<router-view></router-view>
 </div>
@@ -36,11 +36,16 @@ export default {
 			title: 'Jarrekk'
 		}
 	},
+  computed: {
+    menu_active () {
+      return store.state.menu_active
+    },
+  },
 	methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     }
+  }
 }
 </script>
 

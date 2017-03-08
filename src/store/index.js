@@ -6,6 +6,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     count: 0,
+    menu_active: "2",
     api_list: [
     	{id: 1, work: true},
     	{id: 2, work: false}
@@ -20,6 +21,9 @@ const store = new Vuex.Store({
     increment (state) {
     	// test code at page '/' & '/api'
       state.count++
+    },
+    changeMenu (state, active) {
+      state.menu_active = active;
     },
     addtrueApis (state) {
       var l = state.api_list.length
