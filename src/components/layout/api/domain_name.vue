@@ -57,7 +57,7 @@ methods: {
 	}
 },
 created: function () {
-	  	store.commit('changeMenu', "6")
+	  	store.commit('changeMenu', "/api/domain_name")
   	}
 }
 </script>

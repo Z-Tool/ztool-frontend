@@ -53,7 +53,7 @@ methods: {
 	}
 },
 created: function () {
-	  	store.commit('changeMenu', "5")
+	  	store.commit('changeMenu', "/api/ip_information")
   	}
 }
 </script>

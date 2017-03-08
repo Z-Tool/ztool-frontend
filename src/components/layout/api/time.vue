@@ -36,7 +36,7 @@ created: function () {
     http.get(this, '/api/v1.0/time').then(resp => {
       this.time = resp.body.data
     })
-	  store.commit('changeMenu', "2")
+	  store.commit('changeMenu', "/api/time")
   }
 }
 </script>

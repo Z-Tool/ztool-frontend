@@ -1,13 +1,14 @@
 <template>
 <div>
-	<el-menu v-bind:default-active="menu_active" mode="horizontal" @select="handleSelect">
-	  <router-link to="/api1/time"><el-menu-item index="1"><span>{{ title }}</span></el-menu-item></router-link>
-	  <router-link to="/api1/time"><el-menu-item index="2">Time</el-menu-item></router-link>
-	  <router-link to="/api1/jalpc_count"><el-menu-item index="3">Jalpc Count</el-menu-item></router-link>
-	  <router-link to="/api1/rss"><el-menu-item index="4">RSS</el-menu-item></router-link>
-	  <router-link to="/api1/ip_information"><el-menu-item index="5">IP Information</el-menu-item></router-link>
-	  <router-link to="/api1/domain_name"><el-menu-item index="6">Domain Name Information</el-menu-item></router-link>
-	  <router-link to="/api1/dns"><el-menu-item index="7">DNS Record</el-menu-item></router-link>
+	<el-menu v-bind:default-active="menu_active" router mode="horizontal" @select="handleSelect">
+	  	<el-menu-item index="/api/time"><span>{{ title }}</span></el-menu-item>
+	  	<el-menu-item index="/api/time">Time</el-menu-item>
+		<el-menu-item index="/api/jalpc_count">Jalpc Count</el-menu-item>
+		<el-menu-item index="/api/rss">RSS</el-menu-item>
+		<el-menu-item index="/api/ip_information">IP Information</el-menu-item>
+		<el-menu-item index="/api/domain_name">Domain Name Information</el-menu-item>
+		<el-menu-item index="/api/dns">DNS Record</el-menu-item>
+	  	<el-menu-item @click="logout" style="position: absolute;right: 0;" index="">Logout</el-menu-item>
 	</el-menu>
  	<router-view></router-view>
 </div>
@@ -36,15 +37,19 @@ export default {
 			title: 'Jarrekk'
 		}
 	},
-  computed: {
-    menu_active () {
-      return store.state.menu_active
-    },
-  },
+  	computed: {
+    	menu_active () {
+      		return store.state.menu_active
+    	},
+  	},
 	methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    }
+		logout () {
+			Auth.logout()
+			router.go('/user/login')
+		},
+	    handleSelect(key, keyPath) {
+	      console.log(key, keyPath);
+	    }
   }
 }
 </script>

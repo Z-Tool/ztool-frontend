@@ -34,7 +34,7 @@ created: function () {
    	http.get(this, '/api/v1.0/jalpc/pv_count').then(resp => {
       this.count = resp.body.data
     })
-	  store.commit('changeMenu', "3")
+	  store.commit('changeMenu', "/api/jalpc_count")
   }
 }
 </script>

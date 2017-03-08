@@ -64,7 +64,7 @@ methods: {
 	}
 },
 created: function () {
-	  store.commit('changeMenu', "4")
+	  store.commit('changeMenu', "/api/rss")
   }
 }
 </script>
