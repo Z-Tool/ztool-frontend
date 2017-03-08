@@ -2,7 +2,7 @@
 	<div style="margin-top: 20px;">
 		<el-row :gutter="20" style="margin-top: 20px;">
 		  	<el-col :span="10" :offset="7">
-				<el-input placeholder="IP Address" v-model="ip_address">
+				<el-input placeholder="IP Address(blank for your own IP)" v-model="ip_address">
 				    <el-button slot="append" icon="search" @click="get_info"></el-button>
 				</el-input>
 				<div v-show="result" id="result" style="text-align: left;margin-top: 20px;"></div>

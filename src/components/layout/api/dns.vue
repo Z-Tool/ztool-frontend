@@ -40,13 +40,17 @@ data() {
 },
 methods: {
 	get_info () {
-		http.get(this, '/api/v1.0/nslookup?domain=' + this.domain_server).then(resp => {
-			this.result = JSON.stringify(resp.data)
-	      	const formatter = new JSONFormatter(resp.data)
-	      	document.getElementById('result').innerHTML = ""
-	      	document.getElementById('result').appendChild(formatter.render())
-	      	formatter.openAtDepth(2)
-	    })
+		if (this.domain_server) {
+			http.get(this, '/api/v1.0/nslookup?domain=' + this.domain_server).then(resp => {
+				this.result = JSON.stringify(resp.data)
+		      	const formatter = new JSONFormatter(resp.data)
+		      	document.getElementById('result').innerHTML = ""
+		      	document.getElementById('result').appendChild(formatter.render())
+		      	formatter.openAtDepth(2)
+		    })
+		} else {
+			this.$message.error('Please input Domain Server Address!');
+		}
 	},
 	copy_result () {
 		copy(this.result)
