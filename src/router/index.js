@@ -10,6 +10,10 @@ const api = resolve => require(['components/api'], resolve)
 // const api_time = resolve => require(['components/layout/api/time'], resolve)
 const api_time = r => require.ensure([], () => r(require('components/layout/api/time')), 'api')
 const api_jalpc_count = r => require.ensure([], () => r(require('components/layout/api/jalpc_count')), 'api')
+const rss = r => require.ensure([], () => r(require('components/layout/api/rss')), 'api')
+const ip_information = r => require.ensure([], () => r(require('components/layout/api/ip_information')), 'api')
+const domain_name = r => require.ensure([], () => r(require('components/layout/api/domain_name')), 'api')
+const dns = r => require.ensure([], () => r(require('components/layout/api/dns')), 'api')
 const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user')
 const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user')
 const notfound = resolve => require(['components/404'], resolve)
@@ -49,6 +53,34 @@ const routes = [{
     component: api_jalpc_count,
     meta: {
       title: 'API List | Jalpc Count',
+      auth: true
+    }
+  }, {
+    path: 'rss',
+    component: rss,
+    meta: {
+      title: 'API List | RSS',
+      auth: true
+    }
+  }, {
+    path: 'ip_information',
+    component: ip_information,
+    meta: {
+      title: 'API List | IP Information',
+      auth: true
+    }
+  }, {
+    path: 'domain_name',
+    component: domain_name,
+    meta: {
+      title: 'API List | Domain Name',
+      auth: true
+    }
+  }, {
+    path: 'dns',
+    component: dns,
+    meta: {
+      title: 'API List | DNS Record',
       auth: true
     }
   }]

@@ -4,10 +4,10 @@
 	  <router-link to="/api1/time"><el-menu-item index="1"><span>{{ title }}</span></el-menu-item></router-link>
 	  <router-link to="/api1/time"><el-menu-item index="2">Time</el-menu-item></router-link>
 	  <router-link to="/api1/jalpc_count"><el-menu-item index="3">Jalpc Count</el-menu-item></router-link>
-	  <router-link to="/api"><el-menu-item index="4">RSS</el-menu-item></router-link>
-	  <router-link to="/api1"><el-menu-item index="5">IP Information</el-menu-item></router-link>
-	  <router-link to="/api1"><el-menu-item index="6">Domain Name Information</el-menu-item></router-link>
-	  <router-link to="/api1/time"><el-menu-item index="7">DNS Record</el-menu-item></router-link>
+	  <router-link to="/api1/rss"><el-menu-item index="4">RSS</el-menu-item></router-link>
+	  <router-link to="/api1/ip_information"><el-menu-item index="5">IP Information</el-menu-item></router-link>
+	  <router-link to="/api1/domain_name"><el-menu-item index="6">Domain Name Information</el-menu-item></router-link>
+	  <router-link to="/api1/dns"><el-menu-item index="7">DNS Record</el-menu-item></router-link>
 	</el-menu>
  	<router-view></router-view>
 </div>
