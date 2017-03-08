@@ -1,8 +1,7 @@
 <template>
 	<div style="margin-top: 20px;">
 		<el-row :gutter="20" style="margin-top: 20px;">
-		  	<el-col :span="12" :offset="6">
-				<div>{{ time }}</div>
+		  	<el-col :span="10" :offset="7">
 				<el-input placeholder="Domain Server Address" v-model="domain_server">
 				    <template slot="prepend">Http(s)://</template>
 				    <el-button slot="append" icon="search" @click="get_info"></el-button>
@@ -35,7 +34,6 @@ Vue.prototype.$message = Message
 export default {
 data() {
   	return {
-  		time: '',
   		domain_server: '',
   		result: ''
   	};
