@@ -1,8 +1,8 @@
 <template>
 	<div style="margin-top: 20px;">
-		<el-button @click="format" style="text-align: center;">Format</el-button>
+		<el-button @click="format">Format</el-button>
 		<el-row :gutter="20" style="margin-top: 20px;">
-		  	<el-col :span="10" :offset="1">
+		  	<el-col :span="10" :offset="2">
 				<el-input
 				  	type="textarea"
 				  	:autosize="{ minRows: 12}"
@@ -10,8 +10,8 @@
 				  	v-model="json_string">
 				</el-input>
 			</el-col>
-		  	<el-col :span="10" :offset="1">
-				<div v-show="result" id="result" style="text-align: left;"></div>
+		  	<el-col :span="10">
+				<div v-show="result" id="result"></div>
 			</el-col>
 		</el-row>
 	</div>
@@ -67,8 +67,9 @@ created: function () {
 }
 </script>
 
-<style>
+<style scoped>
 #result {
+	text-align: left;
 	border: 1px solid #bfcbd9;
 	border-radius: 4px;
 }

@@ -29,7 +29,6 @@ Vue.component(Carousel.name, Carousel)
 Vue.component(CarouselItem.name, CarouselItem)
 
 export default {
-  name: 'index',
   data () {
     return {
       name: 'Kun Jia',

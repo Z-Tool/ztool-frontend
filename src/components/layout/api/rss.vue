@@ -3,7 +3,7 @@
 		<el-row :gutter="20" style="margin-top: 20px;">
 		  	<el-col :span="10" :offset="7">
 				<el-input placeholder="RSS Address" v-model="rss_address">
-				    <el-select v-model="url_prefix" slot="prepend" placeholder="http://">
+				    <el-select id="select" v-model="url_prefix" slot="prepend" placeholder="http://">
 				      	<el-option label="http://" value="http://"></el-option>
 				      	<el-option label="https://" value="https://"></el-option>
 				    </el-select>
@@ -69,8 +69,8 @@ created: function () {
 }
 </script>
 
-<style>
-.el-select .el-input {
+<style scoped>
+#select {
 width: 100px;
 }
 </style>

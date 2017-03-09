@@ -39,6 +39,6 @@ created: function () {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

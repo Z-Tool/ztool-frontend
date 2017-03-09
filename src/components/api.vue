@@ -6,7 +6,7 @@
 		<el-menu-item index="/api/jalpc_count">Jalpc Count</el-menu-item>
 		<el-menu-item index="/api/rss">RSS</el-menu-item>
 		<el-menu-item index="/api/ip_information">IP Information</el-menu-item>
-		<el-menu-item index="/api/domain_name">Domain Name Information</el-menu-item>
+		<el-menu-item index="/api/domain_name">Domain Name</el-menu-item>
 		<el-menu-item index="/api/dns">DNS Record</el-menu-item>
 		<el-menu-item index="/api/json_format">JSON Format</el-menu-item>
 	  	<el-menu-item @click="logout" style="position: absolute;right: 0;" index="">Logout</el-menu-item>
@@ -32,7 +32,6 @@ Vue.component(Submenu.name, Submenu)
 Vue.prototype.$notify = Notification
 
 export default {
-	name: 'api',
 	data () {
 		return {
 			title: 'Jarrekk'
