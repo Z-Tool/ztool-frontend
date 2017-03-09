@@ -13,6 +13,7 @@ const rss = resolve => require(['components/layout/api/rss'], resolve)
 const ip_information = resolve => require(['components/layout/api/ip_information'], resolve)
 const domain_name = resolve => require(['components/layout/api/domain_name'], resolve)
 const dns = resolve => require(['components/layout/api/dns'], resolve)
+const json_format = resolve => require(['components/layout/api/json_format'], resolve)
 
 const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user')
 const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user')
@@ -82,6 +83,13 @@ const routes = [{
     component: dns,
     meta: {
       title: 'API List | DNS Record',
+      auth: true
+    }
+  }, {
+    path: 'json_format',
+    component: json_format,
+    meta: {
+      title: 'API List | JSON Format',
       auth: true
     }
   }]
