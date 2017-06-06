@@ -9,7 +9,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: true,
-    APIServer: 'https://vps.jarrekk.com:8443',
+    APIServer: 'https://api.jarrekk.com',
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
