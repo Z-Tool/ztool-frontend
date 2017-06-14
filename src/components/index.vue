@@ -35,7 +35,7 @@ export default {
       website: 'http://www.jarrekk.com',
       facebook: 'https://www.facebook.com/jiakunnj',
       github: 'https://github.com/jarrekk',
-      linkedin: 'https://www.linkedin.com/in/kun-jia-991264a2/',
+      linkedin: 'https://www.linkedin.com/in/jarrekk/',
       email: 'mailto:me@jarrekk.com',
       height: ''
     }
