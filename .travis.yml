@@ -1,0 +1,19 @@
+sudo: required
+language: node_js
+node_js: 7
+
+addons:
+  ssh_known_hosts:
+  - vps.jarrekk.com
+
+before_script:
+- pip install fabric
+- openssl aes-256-cbc -K $encrypted_6b6147749537_key -iv $encrypted_6b6147749537_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+
+script:
+- fab front
+
+notifications:
+  email: me@jarrekk.com
