@@ -11,6 +11,9 @@ addons:
 
 before_install:
   - nvm install $NODE_VERSION
+  - node --version
+  - npm --version
+  - nvm --version
 
 before_script:
   - pip install Fabric3
