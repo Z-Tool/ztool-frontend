@@ -21,7 +21,13 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
 
 script:
-  - fab front
+  - echo "script"
+
+deploy:
+  provider: script
+  script: fab front
+  on:
+    branch: master
 
 notifications:
   email: me@jarrekk.com
