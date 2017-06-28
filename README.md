@@ -1,5 +1,7 @@
 # Z-Tool frontend
 
+[![Build Status](https://api.travis-ci.org/Z-Tool/ztool-frontend.svg?branch=master)](https://api.travis-ci.org/Z-Tool/ztool-frontend)
+
 > A Vue.js project for Z-Tool backend
 
 ## Build Setup
