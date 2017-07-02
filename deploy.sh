@@ -1,7 +1,7 @@
 #!/bin/sh
 
 rm -rf node_modules
-npm install
+npm install > /dev/null 2>&1
 npm run build
 if [ $? -eq 0 ]; then
   ssh root@vps.jarrekk.com "rm -rf /frontend/*"
