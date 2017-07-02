@@ -16,7 +16,7 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: sh deploy.sh
+  script: sh .travis/deploy.sh
   on:
     branch: master
 
