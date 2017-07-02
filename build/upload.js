@@ -1,15 +1,15 @@
 require('shelljs/global');
 
-var host = 'root@vps.jarrekk.com'
-var dir = '/usr/share/nginx/html'
+const host = 'root@vps.jarrekk.com';
+const dir = '/frontend';
 
-exec('ssh ' + host + ' "rm -rf ' + dir + '/*"', function(code, stdout, stderr) {
+exec('ssh ' + host + ' "rm -rf ' + dir + '/*"', function (code, stdout, stderr) {
   console.log('Exit code:', code);
   console.log('Program output:', stdout);
   console.log('Program stderr:', stderr);
 });
 
-exec('cd dist && rsync -avz * ' + host + ':' + dir, function(code, stdout, stderr) {
+exec('cd dist && rsync -avz * ' + host + ':' + dir, function (code, stdout, stderr) {
   console.log('Exit code:', code);
   console.log('Program output:', stdout);
   console.log('Program stderr:', stderr);
