@@ -16,7 +16,10 @@ before_deploy:
 
 deploy:
   provider: script
-  script: npm run upload
+  script:
+    - npm run build
+    - ssh root@vps.jarrekk.com "rm -rf /frontend/*"
+    - rsync -avz * root@vps.jarrekk.com:/frontend
   on:
     branch: master
 
