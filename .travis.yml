@@ -6,11 +6,8 @@ addons:
   ssh_known_hosts:
     - vps.jarrekk.com
 
-before_script:
-  - npm install -g chalk
-
 script:
-  - npm run build
+  - echo "ztool"
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_6b6147749537_key -iv $encrypted_6b6147749537_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
