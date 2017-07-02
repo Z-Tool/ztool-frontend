@@ -12,14 +12,14 @@ script:
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_6b6147749537_key -iv $encrypted_6b6147749537_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
-  - npm install
 
 deploy:
   provider: script
   script:
     - npm run build
     - ssh root@vps.jarrekk.com "rm -rf /frontend/*"
-    - rsync -avz * root@vps.jarrekk.com:/frontend
+    - rsync -avz dist root@vps.jarrekk.com:/frontend/
+    - ssh root@vps.jarrekk.com "docker restart backhend_nginx_1"
   on:
     branch: master
 
