@@ -1,3 +1,3 @@
 module.exports = {
-	APIServer: 'https://api.jarrekk.com'
+	APIServer: 'http://127.0.0.1:5000'
 }

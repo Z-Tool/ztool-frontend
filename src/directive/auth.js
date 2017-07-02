@@ -10,20 +10,20 @@ export default {
   login(context, creds, redirect) {
     context.$http.get(constant.APIServer + '/api/v1.0/token', creds).then(response => {
       localStorage.setItem('id_token', response.body.token, '3600s');
-      this.user.authenticated = true
+      this.user.authenticated = true;
       context.$notify({
         title: 'Jarrekk',
         message: 'Welcome back ' + response.body.email + '!',
         duration: 3000,
         type: 'success'
-      })
+      });
       // console.log(redirect)
-      if(redirect) {
+      if (redirect) {
         router.replace({name: redirect})
       }
     }, response => {
-      console.log(0, response)
-      if (response.status == 0) {
+      console.log(0, response);
+      if (response.status === 0) {
         context.$notify.error({
           title: 'Jarrekk',
           message: 'Login error! Please check your network.',
@@ -41,9 +41,9 @@ export default {
 
   signup(context, creds, redirect) {
     context.$http.post(constant.APIServer + '/api/v1.0/user/new', creds, (data) => {
-      localStorage.setItem('id_token', response.body.token)
-      this.user.authenticated = true
-      if(redirect) {
+      localStorage.setItem('id_token', response.body.token);
+      this.user.authenticated = true;
+      if (redirect) {
         router.replace({name: redirect})
       }
     }).error((err) => {
@@ -52,17 +52,12 @@ export default {
   },
   // To log out, we just need to remove the token
   logout() {
-    localStorage.removeItem('id_token')
+    localStorage.removeItem('id_token');
     this.user.authenticated = false
   },
   checkAuth() {
-    var jwt = localStorage.getItem('id_token')
-    if(jwt) {
-      this.user.authenticated = true
-    }
-    else {
-      this.user.authenticated = false
-    }
+    const jwt = localStorage.getItem('id_token');
+    this.user.authenticated = !!jwt;
   },
   // The object to be passed as a header for authenticated requests
   getAuthHeader() {

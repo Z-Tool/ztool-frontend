@@ -4,25 +4,25 @@ import VueResource from 'vue-resource'
 import VueCookie from 'vue-cookie'
 import Auth from '../directive/auth'
 
-const index = resolve => require(['components/index'], resolve)
-const api = resolve => require(['components/api'], resolve)
+const index = resolve => require(['components/index'], resolve);
+const api = resolve => require(['components/api'], resolve);
 
-const api_time = resolve => require(['components/layout/api/time'], resolve)
-const api_jalpc_count = resolve => require(['components/layout/api/jalpc_count'], resolve)
-const rss = resolve => require(['components/layout/api/rss'], resolve)
-const ip_information = resolve => require(['components/layout/api/ip_information'], resolve)
-const domain_name = resolve => require(['components/layout/api/domain_name'], resolve)
-const dns = resolve => require(['components/layout/api/dns'], resolve)
-const json_format = resolve => require(['components/layout/api/json_format'], resolve)
+const api_time = resolve => require(['components/layout/api/time'], resolve);
+const api_jalpc_count = resolve => require(['components/layout/api/jalpc_count'], resolve);
+const rss = resolve => require(['components/layout/api/rss'], resolve);
+const ip_information = resolve => require(['components/layout/api/ip_information'], resolve);
+const domain_name = resolve => require(['components/layout/api/domain_name'], resolve);
+const dns = resolve => require(['components/layout/api/dns'], resolve);
+const json_format = resolve => require(['components/layout/api/json_format'], resolve);
 
-const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user')
-const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user')
+const login_user = r => require.ensure([], () => r(require('components/user/login')), 'user');
+const new_user = r => require.ensure([], () => r(require('components/user/new')), 'user');
 
-const notfound = resolve => require(['components/404'], resolve)
+const notfound = resolve => require(['components/404'], resolve);
 
-Vue.use(Router)
-Vue.use(VueCookie)
-Vue.use(VueResource)
+Vue.use(Router);
+Vue.use(VueCookie);
+Vue.use(VueResource);
 
 
 const routes = [{
@@ -114,25 +114,25 @@ const routes = [{
     title: '404 not found',
   },
   component: notfound
-}, ]
+},];
 
 const router = new Router({
   routes
-})
+});
 
 router.beforeEach((to, from, next) => {
-  Auth.checkAuth()
+  Auth.checkAuth();
   if (to.meta.auth && !Auth.user.authenticated) {
-    router.push({ name: 'login' })
+    router.push({name: 'login'})
   } else if (Auth.user.authenticated && to.path.indexOf('/user/') > -1) {
-    router.push({ name: 'index' })
+    router.push({name: 'index'})
   } else {
     next()
   }
-})
+});
 
 router.afterEach(route => {
   document.title = route.meta.title;
-})
+});
 
 export default router
